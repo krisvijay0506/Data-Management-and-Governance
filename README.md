@@ -52,6 +52,8 @@ Combines data cataloging, lineage tracking, policy enforcement, and quality chec
 
 ### ✅ Simplified Governance Across the Organization
 Enables consistent, centralized governance over distributed data systems, helping teams build reliable and trusted data products.
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/c9116f04-e418-4694-8a89-5a09ed257e44" />
+
 
 
 
