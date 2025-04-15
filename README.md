@@ -241,6 +241,86 @@ gcloud dataplex lakes delete ecommerce \
 
 ✅ **Use Case**: This setup enables efficient, governed, and discoverable data lakes for analytics and cross-domain insights—all aligned with the **Data Mesh** philosophy.
 
+# 📘 Metadata Tagging with Tag Templates in Dataplex
+
+This document outlines the process for creating a **Tag Template**, applying it to **BigQuery table columns**, and discovering tagged assets using **Google Cloud Dataplex** and **Data Catalog**.
+
+---
+
+## ✅ Task 2: Create a Tag Template
+
+We created a **public tag template** to label BigQuery table columns with a `Protected Data` status.
+
+### 🔧 Steps:
+
+1. In the left menu, go to:  
+   `Manage Metadata` > **Tag templates**
+2. Click **Create tag template**
+3. Fill in the required details:
+   - **Template Display Name**: `Protected Data Template`
+   - **Template ID**: *(Leave default)*
+   - **Location**: `____` *(e.g., `us-central1`)*
+   - **Visibility**: `Public`
+4. Click **Add field**, then provide:
+   - **Field Display Name**: `Protected Data Flag`
+   - **Field ID**: *(Leave default)*
+   - **Type**: `Enumerated`
+     - **Values**:
+       - `YES`
+       - `NO`
+5. Click **Done**
+6. Click **Create**
+
+---
+
+## ✅ Task 3: Apply the Tag Template to Dataplex Assets
+
+We applied the created tag template to specific columns in the `customer_details` BigQuery table.
+
+### 🔧 Steps:
+
+1. In the left menu, go to:  
+   `Discover` > **Search**
+2. Under **Filters > Systems**, check: `Dataplex`
+3. Click on the **customer_details** table  
+   > *If not visible, wait a few minutes and refresh the page.*
+4. Click **Attach tags**
+5. Under **Choose what to tag**, enable the checkboxes for:
+   - `zip`
+   - `state`
+   - `last_name`
+   - `country`
+   - `email`
+   - `latitude`
+   - `first_name`
+   - `city`
+   - `longitude`
+6. Click **OK**
+7. Under **Choose the tag templates**, select: `Protected Data Template`
+8. For **Protected Data Flag**, select: `YES`
+9. Click **Save**
+
+---
+
+## ✅ Task 4: Search for Assets Using Tags
+
+After tagging, assets can be discovered using filters in **Data Catalog** within **Dataplex**.
+
+### 🔧 Steps:
+
+1. In the left menu, go to:  
+   `Discover` > **Search**
+2. Under **Filters > Tags**, check: `Protected Data Template`
+3. Click on the **customer_details** table
+4. Go to the **Schema and column tags** tab
+5. Verify that the **Protected Data** tags are visible on the selected columns
+
+---
+
+## ✅ Summary
+
+By tagging sensitive or protected data fields using **tag templates**, you enhance **data discoverability** and **governance** in your GCP environment while maintaining access control integrity.
+
 
 
 
