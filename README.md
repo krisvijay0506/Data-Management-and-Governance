@@ -110,6 +110,137 @@ To delete a lake, you must follow the proper hierarchy. Dataplex enforces depend
 
 > 🔐 **Note:** Make sure you have the required IAM permissions (like `dataplex.admin`) to perform these operations.
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/d29c30ad-faf4-45db-bae5-7d95b4187741" />
+# 🧪 Dataplex: Qwik Start – Command Line Lab
+
+This lab provides hands-on experience using **Google Cloud Dataplex** to manage and organize data through the **command-line interface**. It walks through the process of creating a lake, zone, attaching a BigQuery dataset, and cleaning up resources.
+
+---
+
+## 📋 Lab Objectives
+
+- Enable the **Dataplex API**
+- Create a **Dataplex Lake**
+- Add a **Zone** to the Lake
+- Attach and detach **Assets** (BigQuery datasets)
+- Delete the Zone and Lake
+
+---
+
+## 🧱 Concepts Overview
+
+### 🔹 Lake
+- The **highest organizational unit** in Dataplex.
+- Represents a **data domain**
+
+
+# 🚀 Dataplex Lab: Create and Manage a Lake, Zone, and Asset on GCP
+
+This guide demonstrates how to use **Dataplex** to create a data mesh architecture by managing lakes, zones, and assets using `gcloud` and `bq` commands.
+
+---
+
+## 🌍 Step 2: Set Environment Variables
+
+```bash
+export PROJECT_ID=$(gcloud config get-value project)
+export REGION=us-central1
+```
+
+---
+
+## 🏞️ Step 3: Create a Lake
+
+```bash
+gcloud dataplex lakes create ecommerce \
+  --location=$REGION \
+  --display-name="Ecommerce" \
+  --description="Ecommerce Domain"
+```
+
+---
+
+## 🧭 Step 4: Create a Curated Zone
+
+```bash
+gcloud dataplex zones create orders-curated-zone \
+  --location=$REGION \
+  --lake=ecommerce \
+  --display-name="Orders Curated Zone" \
+  --resource-location-type=SINGLE_REGION \
+  --type=CURATED \
+  --discovery-enabled \
+  --discovery-schedule="0 * * * *"
+```
+
+---
+
+## 🗃️ Step 5: Create a BigQuery Dataset
+
+```bash
+bq mk --location=$REGION --dataset orders
+```
+
+---
+
+## 🔗 Step 6: Attach BigQuery Dataset as an Asset
+
+```bash
+gcloud dataplex assets create orders-curated-dataset \
+  --location=$REGION \
+  --lake=ecommerce \
+  --zone=orders-curated-zone \
+  --display-name="Orders Curated Dataset" \
+  --resource-type=BIGQUERY_DATASET \
+  --resource-name=projects/$PROJECT_ID/datasets/orders \
+  --discovery-enabled
+```
+
+---
+
+## ❌ Step 7: Detach the Asset
+
+```bash
+gcloud dataplex assets delete orders-curated-dataset \
+  --location=$REGION \
+  --zone=orders-curated-zone \
+  --lake=ecommerce
+```
+
+---
+
+## 🧹 Step 8: Delete the Zone
+
+```bash
+gcloud dataplex zones delete orders-curated-zone \
+  --location=$REGION \
+  --lake=ecommerce
+```
+
+---
+
+## 🗑️ Step 9: Delete the Lake
+
+```bash
+gcloud dataplex lakes delete ecommerce \
+  --location=$REGION
+```
+
+---
+
+## 🧩 Dataplex for Data Mesh
+
+**Dataplex** supports Data Mesh Architecture principles:
+
+- **Decentralized Data Ownership**: Each domain owns and manages its own data.
+- **Centralized Governance**: Common policies and metadata control through Dataplex.
+- **No Data Duplication**: Manages metadata directly—no need to move or copy data.
+- **Unified Metastore**: Automatically registers both structured and unstructured data into a single secure metastore.
+- **Native Integrations**: Seamlessly works with BigQuery, Data Catalog, Cloud Storage, and more.
+
+---
+
+✅ **Use Case**: This setup enables efficient, governed, and discoverable data lakes for analytics and cross-domain insights—all aligned with the **Data Mesh** philosophy.
+
 
 
 
