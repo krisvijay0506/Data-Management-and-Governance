@@ -6,6 +6,6 @@
 ### Integrated analytics means analyzing data directly within dataplex
 ### Combines data cataloging,lineage,governance and quality monitoring all in one place.
 ### The main goal of data plex is to simplify data governance across data lakes,warehouses and databases in an organization.
-<img width="640" alt="image" src="https://github.com/user-attachments/assets/fd566da7-0e3c-4b79-b046-fce8bc5ac358" />
+<img width="885" alt="image" src="https://github.com/user-attachments/assets/fd566da7-0e3c-4b79-b046-fce8bc5ac358" />
 
 
