@@ -84,6 +84,16 @@ There are two main types of zones:
 
 > 📌 Tip: Structuring your data into raw and curated zones enables a clear separation between ingest and consumption layers, improving traceability, governance, and data quality.
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/b8163fac-b784-40b2-9227-b66283a23412" />
+### 📦 Asset
+
+An **Asset** in Dataplex represents the actual storage layer—such as Cloud Storage buckets or BigQuery datasets—that holds your data.
+
+Assets are always linked to a specific **zone** within a lake, and they inherit the governance and access policies defined at the zone and lake level.
+
+#### ✅ Supported Asset Types:
+- **Cloud Storage Buckets** – for files like CSV, Parquet, JSON, etc.
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/4ef9b234-2c3c-4f51-8071-8199436cda55" />
+
 
 
 
