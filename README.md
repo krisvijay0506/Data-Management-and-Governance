@@ -55,7 +55,6 @@ Enables consistent, centralized governance over distributed data systems, helpin
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/398524da-ae10-41ce-bffd-7db7a500c6bc" />
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/c9116f04-e418-4694-8a89-5a09ed257e44" />
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/20ed2a0a-361b-46ba-9aba-86c47a23587d" />
-<img width="950" alt="image" src="https://github.com/user-attachments/assets/3999b913-2d14-4e44-b389-4221f8c9b0e7" />
 ## 🧱 Dataplex Components
 
 ### 🔹 Lake
@@ -66,6 +65,7 @@ A **Lake** in Dataplex is the highest-level organizational construct. It typical
 - Enables **domain-specific access controls** and governance policies.
 
 > 💡 Example: You can create a separate lake for each department—like Marketing, Sales, or Finance—to ensure that each team manages and accesses its own data independently, while still adhering to centralized governance policies.
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/3999b913-2d14-4e44-b389-4221f8c9b0e7" />
 
 
 
