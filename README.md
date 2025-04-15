@@ -109,8 +109,7 @@ To delete a lake, you must follow the proper hierarchy. Dataplex enforces depend
    After all zones are removed, you can safely delete the lake itself.
 
 > 🔐 **Note:** Make sure you have the required IAM permissions (like `dataplex.admin`) to perform these operations.
-
-
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/d29c30ad-faf4-45db-bae5-7d95b4187741" />
 
 
 
