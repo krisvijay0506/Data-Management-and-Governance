@@ -66,6 +66,25 @@ A **Lake** in Dataplex is the highest-level organizational construct. It typical
 
 > 💡 Example: You can create a separate lake for each department—like Marketing, Sales, or Finance—to ensure that each team manages and accesses its own data independently, while still adhering to centralized governance policies.
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/3999b913-2d14-4e44-b389-4221f8c9b0e7" />
+### 🔸 Zone
+
+A **Zone** in Dataplex is a subdomain within a lake that helps further categorize data based on its lifecycle stage, usage, or access restrictions.
+
+There are two main types of zones:
+
+- **Raw Zone**  
+  - Stores data in its original/raw format (e.g., files in GCS).
+  - Typically used for staging or archiving unprocessed data.
+  - Not subject to strict type-checking or schema enforcement.
+
+- **Curated Zone**  
+  - Contains data that has been cleaned, standardized, and made analytics-ready.
+  - Often used for structured tables in BigQuery or other analytics tools.
+  - Ideal for downstream consumption, reporting, and ML workflows.
+
+> 📌 Tip: Structuring your data into raw and curated zones enables a clear separation between ingest and consumption layers, improving traceability, governance, and data quality.
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/b8163fac-b784-40b2-9227-b66283a23412" />
+
 
 
 
