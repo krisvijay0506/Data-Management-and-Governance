@@ -93,8 +93,22 @@ Assets are always linked to a specific **zone** within a lake, and they inherit 
 #### ✅ Supported Asset Types:
 - **Cloud Storage Buckets** – for files like CSV, Parquet, JSON, etc.
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/4ef9b234-2c3c-4f51-8071-8199436cda55" />
+### 🗑️ Deleting a Lake in Dataplex
 
+To delete a lake, you must follow the proper hierarchy. Dataplex enforces dependency rules, so you need to clean up in reverse order:
 
+#### 🧹 Deletion Workflow:
+
+1. **Detach Assets**  
+   Begin by detaching any Cloud Storage or BigQuery assets from their respective zones.
+
+2. **Delete Zones**  
+   Once assets are detached, delete each zone within the lake (both raw and curated).
+
+3. **Delete the Lake**  
+   After all zones are removed, you can safely delete the lake itself.
+
+> 🔐 **Note:** Make sure you have the required IAM permissions (like `dataplex.admin`) to perform these operations.
 
 
 
